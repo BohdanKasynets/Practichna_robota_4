@@ -44,7 +44,6 @@ class Graph {
         let path = [];
         let smallest;
 
-        // Початкова установка
         for (let vertex in this.adjacencyList) {
             if (vertex === start) {
                 distances[vertex] = 0;
@@ -56,12 +55,11 @@ class Graph {
             previous[vertex] = null;
         }
 
-        // Основний цикл
         while (!nodes.isEmpty()) {
             smallest = nodes.dequeue().val;
 
             if (smallest === finish) {
-                // Побудувати шлях
+     
                 while (previous[smallest]) {
                     path.push(smallest);
                     smallest = previous[smallest];
@@ -144,6 +142,5 @@ function createGraphFromPredefinedData() {
     console.log(`Найкоротший шлях від ${start} до ${finish}: ${path.join(" -> ")}`);
 }
 
-// Приклад виклику функцій
+
 createGraphFromUserInput();
-// createGraphFromPredefinedData();
